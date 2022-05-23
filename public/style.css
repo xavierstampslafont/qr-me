@@ -11,3 +11,7 @@ form {
 input {
   margin-bottom: 1em;
 }
+
+.author {
+  font-size: 16px;
+}
