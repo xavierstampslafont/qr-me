@@ -17,7 +17,6 @@ Deployed by Netlify
 ## Next steps
 
 1. Core: enter info -> get QR code
-   1. Generate vCard from input
    1. Generate QR code from vCard
    1. Display QR code
 1. Persist data
