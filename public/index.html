@@ -13,6 +13,7 @@
       import VCard from "https://cdn.skypack.dev/vcard-creator";
       window.vcardcreator = VCard;
     </script>
+    <script src="lib/easy.qrcode.min.js"></script>
     <script defer src="main.js"></script>
   </head>
   <body>
@@ -44,6 +45,7 @@
       <input id="email" type="email" autocomplete="email" placeholder="Email" />
       <button>QR Me!</button>
     </form>
+    <div id="qrContainer"></div>
     <p class="author">
       Developed by
       <a href="https://xavierstampslafont.com/" target="_blank" class="author"

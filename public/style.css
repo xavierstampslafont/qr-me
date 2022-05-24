@@ -8,10 +8,14 @@ form {
   flex-direction: column;
 }
 
-input {
+input, button {
   margin-bottom: 1em;
 }
 
 .author {
   font-size: 16px;
+}
+
+h1, #qrContainer {
+  text-align: center;
 }

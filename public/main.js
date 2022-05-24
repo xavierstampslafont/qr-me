@@ -6,6 +6,11 @@ const lastNameInput = document.getElementById("last-name");
 const phoneInput = document.getElementById("phone");
 const emailInput = document.getElementById("email");
 
+const qrContainer = new QRCode(document.getElementById("qrContainer"), {
+  width: 150,
+  height: 150,
+});
+
 form.onsubmit = (event) => {
   event.preventDefault();
 
@@ -21,5 +26,5 @@ form.onsubmit = (event) => {
     vCard.addEmail(emailInput.value);
   }
 
-  console.log(vCard.toString());
+  qrContainer.makeCode(vCard.toString());
 };
