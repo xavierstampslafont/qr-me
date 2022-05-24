@@ -1,10 +1,23 @@
 const VCard = window.vcardcreator;
 
 const form = document.getElementById("form");
-const firstNameInput = document.getElementById("first-name");
-const lastNameInput = document.getElementById("last-name");
-const phoneInput = document.getElementById("phone");
-const emailInput = document.getElementById("email");
+
+const initInput = (key) => {
+  const input = document.getElementById(key);
+
+  input.value = localStorage.getItem(key);
+
+  input.addEventListener("input", (event) => {
+    localStorage.setItem(key, event.target.value);
+  });
+
+  return input;
+};
+
+const firstNameInput = initInput("first-name");
+const lastNameInput = initInput("last-name");
+const phoneInput = initInput("phone");
+const emailInput = initInput("email");
 
 const qrContainer = new QRCode(document.getElementById("qrContainer"), {
   width: 150,

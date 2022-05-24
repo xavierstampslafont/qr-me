@@ -16,7 +16,4 @@ Deployed by Netlify
 
 ## Next steps
 
-1. Persist data
-   1. Form data
-   1. QR codes?
 1. Toggle inputs to include/exclude from QR code
