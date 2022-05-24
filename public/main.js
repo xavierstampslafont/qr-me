@@ -9,6 +9,8 @@ const initInput = (key) => {
 
   input.addEventListener("input", (event) => {
     localStorage.setItem(key, event.target.value);
+
+    updateQR();
   });
 
   return input;
@@ -27,6 +29,10 @@ const qrContainer = new QRCode(document.getElementById("qrContainer"), {
 form.onsubmit = (event) => {
   event.preventDefault();
 
+  updateQR();
+};
+
+const updateQR = () => {
   const vCard = new VCard();
 
   vCard.addName(lastNameInput.value, firstNameInput.value);
@@ -41,3 +47,13 @@ form.onsubmit = (event) => {
 
   qrContainer.makeCode(vCard.toString());
 };
+
+const hasInfo =
+  Boolean(firstNameInput.value) ||
+  Boolean(lastNameInput.value) ||
+  Boolean(phoneInput.value) ||
+  Boolean(emailInput.value);
+
+if (hasInfo) {
+  updateQR();
+}
