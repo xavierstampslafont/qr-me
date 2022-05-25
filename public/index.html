@@ -18,33 +18,44 @@
   </head>
   <body>
     <h1>QR Me!</h1>
-    <p>
-      You just met a new friend and wish to exchange contact info! But who
-      actually wants to vocally spell out their phone number or email?
-    </p>
-    <p>
-      Instead, use QR Me! As you enter your info below, a QR code will be
-      created with that info inside it.
-    </p>
-    <p>
-      Your new friend can then scan it on their phone, and their phone will
-      create a new contact for you!
-    </p>
-    <form id="form">
-      <input
-        id="first-name"
-        autocomplete="given-name"
-        placeholder="First name"
-      />
-      <input
-        id="last-name"
-        autocomplete="family-name"
-        placeholder="Last name"
-      />
-      <input id="phone" type="tel" autocomplete="tel" placeholder="Phone" />
-      <input id="email" type="email" autocomplete="email" placeholder="Email" />
-    </form>
+    <details open>
+      <summary>About</summary>
+      <p>
+        You just met a new friend and wish to exchange contact info! But who
+        actually wants to vocally spell out their phone number or email?
+      </p>
+      <p>
+        Instead, use QR Me! As you enter your info below, a QR code will be
+        created with that info inside it.
+      </p>
+      <p>
+        Your new friend can then scan it on their phone, which will create a new
+        contact for you!
+      </p>
+    </details>
     <div id="qrContainer"></div>
+    <details open>
+      <summary>Your info</summary>
+      <form id="form">
+        <input
+          id="first-name"
+          autocomplete="given-name"
+          placeholder="First name"
+        />
+        <input
+          id="last-name"
+          autocomplete="family-name"
+          placeholder="Last name"
+        />
+        <input id="phone" type="tel" autocomplete="tel" placeholder="Phone" />
+        <input
+          id="email"
+          type="email"
+          autocomplete="email"
+          placeholder="Email"
+        />
+      </form>
+    </details>
     <p class="author">
       Developed by
       <a href="https://xavierstampslafont.com/" target="_blank" class="author"
