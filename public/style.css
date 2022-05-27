@@ -12,8 +12,10 @@ input, button {
   margin-bottom: 1em;
 }
 
-.author {
+footer {
   font-size: 16px;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 h1, details, #qrContainer {
@@ -28,4 +30,14 @@ p {
 #qrContainer {
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
