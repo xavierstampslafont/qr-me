@@ -41,3 +41,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.input-checkbox-pair {
+  display: flex;
+}
+
+#first-name, #last-name, #phone, #email {
+  flex: 1;
+}

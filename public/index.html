@@ -39,23 +39,40 @@
       <details id="yourInfoOpen">
         <summary>Your info</summary>
         <form id="form">
-          <input
-            id="first-name"
-            autocomplete="given-name"
-            placeholder="First name"
-          />
-          <input
-            id="last-name"
-            autocomplete="family-name"
-            placeholder="Last name"
-          />
-          <input id="phone" type="tel" autocomplete="tel" placeholder="Phone" />
-          <input
-            id="email"
-            type="email"
-            autocomplete="email"
-            placeholder="Email"
-          />
+          <div class="input-checkbox-pair">
+            <input
+              id="first-name"
+              autocomplete="given-name"
+              placeholder="First name"
+            />
+            <input type="checkbox" id="first-name-included" />
+          </div>
+          <div class="input-checkbox-pair">
+            <input
+              id="last-name"
+              autocomplete="family-name"
+              placeholder="Last name"
+            />
+            <input type="checkbox" id="last-name-included" />
+          </div>
+          <div class="input-checkbox-pair">
+            <input
+              id="phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="Phone"
+            />
+            <input type="checkbox" id="phone-included" />
+          </div>
+          <div class="input-checkbox-pair">
+            <input
+              id="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Email"
+            />
+            <input type="checkbox" id="email-included" />
+          </div>
         </form>
       </details>
     </div>
