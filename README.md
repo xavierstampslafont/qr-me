@@ -2,11 +2,11 @@
 
 ## 💡 Concept
 
-You just met a new friend and want to exchange contact info! But who wants to vocally spell out their phone number or whatever?
+Imagine that you just met a new friend and want to exchange contact info! But who wants to vocally spell out their phone number or email?
 
-Here's QR Me! Enter your info in the website, and press "QR Me!" to create a QR code with your info in it.
+Instead, use QR Me! As you enter your info in the website, a QR code will be created with that info inside it.
 
-Your friend can then scan it on their phone, and their phone will create a new contact for you!
+Your new friend can then scan it on their phone, which will create a new contact for you!
 
 ## 🛠 Tech
 
