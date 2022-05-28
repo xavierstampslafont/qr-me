@@ -5,26 +5,40 @@ const form = document.getElementById("form");
 const initInput = (key) => {
   const input = document.getElementById(key);
 
+  const checkboxKey = `${key}-included`;
+
+  const checkbox = document.getElementById(checkboxKey);
+
   input.value = localStorage.getItem(key);
+
+  checkbox.checked = localStorage.getItem(checkboxKey) === "true";
 
   input.addEventListener("input", (event) => {
     localStorage.setItem(key, event.target.value);
 
+    checkbox.checked = true;
+
+    localStorage.setItem(checkboxKey, true);
+
     updateQR();
   });
 
-  return input;
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem(checkboxKey, checkbox.checked);
+
+    updateQR();
+  });
+
+  return [input, checkbox];
 };
 
-const firstNameInput = initInput("first-name");
-const lastNameInput = initInput("last-name");
-const phoneInput = initInput("phone");
-const emailInput = initInput("email");
+const [firstNameInput, firstNameIncluded] = initInput("first-name");
+const [lastNameInput, lastNameIncluded] = initInput("last-name");
+const [phoneInput, phoneIncluded] = initInput("phone");
+const [emailInput, emailIncluded] = initInput("email");
 
-const qrContainer = new QRCode(document.getElementById("qrContainer"), {
-  width: 150,
-  height: 150,
-});
+const qrContainer = document.getElementById("qrContainer");
+const qrCode = new QRCode(qrContainer);
 
 form.onsubmit = (event) => {
   event.preventDefault();
@@ -35,17 +49,30 @@ form.onsubmit = (event) => {
 const updateQR = () => {
   const vCard = new VCard();
 
-  vCard.addName(lastNameInput.value, firstNameInput.value);
+  vCard.addName(
+    lastNameIncluded.checked ? lastNameInput.value : "",
+    firstNameIncluded.checked ? firstNameInput.value : ""
+  );
 
-  if (phoneInput.value) {
+  if (phoneIncluded.checked && phoneInput.value) {
     vCard.addPhoneNumber(phoneInput.value);
   }
 
-  if (emailInput.value) {
+  if (emailIncluded.checked && emailInput.value) {
     vCard.addEmail(emailInput.value);
   }
 
-  qrContainer.makeCode(vCard.toString());
+  if (
+    lastNameIncluded.checked ||
+    firstNameIncluded.checked ||
+    phoneIncluded.checked ||
+    emailIncluded.checked
+  ) {
+    qrCode.makeCode(vCard.toString());
+    qrContainer.style.visibility = "visible";
+  } else {
+    qrContainer.style.visibility = "hidden";
+  }
 };
 
 const hasInfo =
