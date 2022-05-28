@@ -30,6 +30,9 @@ p {
 #qrContainer {
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
+  height: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 html, body {
