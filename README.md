@@ -16,4 +16,4 @@ Deployed by Netlify
 
 ## Next steps
 
-1. Toggle inputs to include/exclude from QR code
+1. While QR is unavailable, show some placeholder
