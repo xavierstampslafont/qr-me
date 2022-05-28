@@ -14,11 +14,15 @@ const initInput = (key) => {
   checkbox.checked = localStorage.getItem(checkboxKey) === "true";
 
   input.addEventListener("input", (event) => {
-    localStorage.setItem(key, event.target.value);
+    const value = event.target.value;
 
-    checkbox.checked = true;
+    localStorage.setItem(key, value);
 
-    localStorage.setItem(checkboxKey, true);
+    const booleanValue = Boolean(value);
+
+    checkbox.checked = booleanValue;
+
+    localStorage.setItem(checkboxKey, booleanValue);
 
     updateQR();
   });
