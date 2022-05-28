@@ -49,25 +49,26 @@ form.onsubmit = (event) => {
 const updateQR = () => {
   const vCard = new VCard();
 
+  const hasLastName = lastNameIncluded.checked && Boolean(lastNameInput.value);
+  const hasFirstName =
+    firstNameIncluded.checked && Boolean(firstNameInput.value);
+  const hasPhone = phoneIncluded.checked && Boolean(phoneInput.value);
+  const hasEmail = emailIncluded.checked && Boolean(emailInput.value);
+
   vCard.addName(
-    lastNameIncluded.checked ? lastNameInput.value : "",
-    firstNameIncluded.checked ? firstNameInput.value : ""
+    hasLastName ? lastNameInput.value : "",
+    hasFirstName ? firstNameInput.value : ""
   );
 
-  if (phoneIncluded.checked && phoneInput.value) {
+  if (hasPhone) {
     vCard.addPhoneNumber(phoneInput.value);
   }
 
-  if (emailIncluded.checked && emailInput.value) {
+  if (hasEmail) {
     vCard.addEmail(emailInput.value);
   }
 
-  if (
-    lastNameIncluded.checked ||
-    firstNameIncluded.checked ||
-    phoneIncluded.checked ||
-    emailIncluded.checked
-  ) {
+  if (hasLastName || hasFirstName || hasPhone || hasEmail) {
     qrCode.makeCode(vCard.toString());
     qrContainer.style.visibility = "visible";
   } else {
