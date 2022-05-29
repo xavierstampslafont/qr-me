@@ -16,4 +16,4 @@ Deployed by Netlify
 
 ## Next steps
 
-1. Improve initial setup after getting state from local storage?
+1. Add manifest
