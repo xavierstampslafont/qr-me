@@ -55,11 +55,8 @@ form.onsubmit = (event) => {
 const updateQR = () => {
   const vCard = new VCard();
 
-  const hasLastName = lastNameIncluded.checked && Boolean(lastNameInput.value);
-  const hasFirstName =
-    firstNameIncluded.checked && Boolean(firstNameInput.value);
-  const hasPhone = phoneIncluded.checked && Boolean(phoneInput.value);
-  const hasEmail = emailIncluded.checked && Boolean(emailInput.value);
+  const { hasLastName, hasFirstName, hasPhone, hasEmail, hasAnyInfo } =
+    getInfoState();
 
   vCard.addName(
     hasLastName ? lastNameInput.value : "",
@@ -74,7 +71,7 @@ const updateQR = () => {
     vCard.addEmail(emailInput.value);
   }
 
-  if (hasLastName || hasFirstName || hasPhone || hasEmail) {
+  if (hasAnyInfo) {
     qrCode.makeCode(vCard.toString());
     qrCodeElement.style.visibility = "visible";
     qrPlaceholder.style.visibility = "hidden";
@@ -84,13 +81,27 @@ const updateQR = () => {
   }
 };
 
-const hasInfo =
-  Boolean(firstNameInput.value) ||
-  Boolean(lastNameInput.value) ||
-  Boolean(phoneInput.value) ||
-  Boolean(emailInput.value);
+const getInfoState = () => {
+  const hasLastName = lastNameIncluded.checked && Boolean(lastNameInput.value);
+  const hasFirstName =
+    firstNameIncluded.checked && Boolean(firstNameInput.value);
+  const hasPhone = phoneIncluded.checked && Boolean(phoneInput.value);
+  const hasEmail = emailIncluded.checked && Boolean(emailInput.value);
 
-if (hasInfo) {
+  const hasAnyInfo = hasLastName || hasFirstName || hasPhone || hasEmail;
+
+  return {
+    hasLastName,
+    hasFirstName,
+    hasPhone,
+    hasEmail,
+    hasAnyInfo,
+  };
+};
+
+const { hasAnyInfo } = getInfoState();
+
+if (hasAnyInfo) {
   updateQR();
 }
 
