@@ -93,22 +93,3 @@ const hasInfo =
 if (hasInfo) {
   updateQR();
 }
-
-const initDetails = (key) => {
-  const details = document.getElementById(key);
-
-  const open = localStorage.getItem(key) || "true";
-
-  if (open === "true") {
-    details.setAttribute("open", "");
-  } else if (open === "false") {
-    details.removeAttribute("open");
-  }
-
-  details.addEventListener("toggle", () => {
-    localStorage.setItem(key, details.open ? "true" : "false");
-  });
-};
-
-initDetails("aboutOpen");
-initDetails("yourInfoOpen");
