@@ -16,4 +16,4 @@ Deployed by Netlify
 
 ## Next steps
 
-1. While QR is unavailable, show some placeholder
+1. Improve initial setup after getting state from local storage?

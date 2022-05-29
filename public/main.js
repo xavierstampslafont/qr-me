@@ -41,8 +41,10 @@ const [lastNameInput, lastNameIncluded] = initInput("last-name");
 const [phoneInput, phoneIncluded] = initInput("phone");
 const [emailInput, emailIncluded] = initInput("email");
 
-const qrContainer = document.getElementById("qrContainer");
-const qrCode = new QRCode(qrContainer);
+const qrCodeElement = document.getElementById("qrCode");
+const qrCode = new QRCode(qrCodeElement);
+
+const qrPlaceholder = document.getElementById("qrPlaceholder");
 
 form.onsubmit = (event) => {
   event.preventDefault();
@@ -74,9 +76,11 @@ const updateQR = () => {
 
   if (hasLastName || hasFirstName || hasPhone || hasEmail) {
     qrCode.makeCode(vCard.toString());
-    qrContainer.style.visibility = "visible";
+    qrCodeElement.style.visibility = "visible";
+    qrPlaceholder.style.visibility = "hidden";
   } else {
-    qrContainer.style.visibility = "hidden";
+    qrCodeElement.style.visibility = "hidden";
+    qrPlaceholder.style.visibility = "visible";
   }
 };
 
