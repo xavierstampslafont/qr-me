@@ -71,7 +71,9 @@ body {
 }
 
 input[type="checkbox"] {
-  margin: 5px;
-  width: 23px;
-  height: 23px;
+  margin-top: 0;
+  margin-left: 1em;
+  margin-right: 0;
+  width: 33px;
+  height: 33px;
 }
