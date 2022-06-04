@@ -17,7 +17,6 @@ Deployed by Netlify
 ## Next steps
 
 1. Lighthouse tests
-   1. Add meta description
    1. Resize checkboxes to be 48x48px
    1. Add manifest for PWA (many issues for this to resolve)
 1. Generate vCard natively instead of using third party package
