@@ -16,4 +16,6 @@ Deployed by Netlify
 
 ## Next steps
 
-1. Add manifest
+1. Lighthouse tests
+   1. Add manifest for PWA (many issues for this to resolve)
+1. Generate vCard natively instead of using third party package
