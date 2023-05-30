@@ -14,15 +14,15 @@
     />
     <link href="style.css" rel="stylesheet" />
     <script type="module">
-      import VCard from "https://cdn.skypack.dev/vcard-creator";
-      window.vcardcreator = VCard;
+      import VCard from "https://cdn.skypack.dev/vcard-creator"
+      window.vcardcreator = VCard
     </script>
     <script src="lib/easy.qrcode.min.js"></script>
     <script defer src="main.js"></script>
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
-    <div>
+    <div id="content">
       <h1>QR Me!</h1>
       <details>
         <summary>What is QR Me?</summary>
@@ -39,6 +39,13 @@
           Your new friend can then scan it on their phone, which will create a
           new contact for you!
         </p>
+        <div id="qrMeCodeContainer">
+          <div id="qrMeCode"></div>
+        </div>
+        <p>
+          Want to share QR Me with your friend? Use the small QR code above.
+        </p>
+        <p>Below is your own QR code.</p>
       </details>
       <div id="qrContainer">
         <div id="qrPlaceholder">
