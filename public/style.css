@@ -1,5 +1,7 @@
-html, input, button {
-  font-family: 'Prompt', sans-serif;
+html,
+input,
+button {
+  font-family: "Prompt", sans-serif;
   font-size: 18px;
 }
 
@@ -8,7 +10,8 @@ form {
   flex-direction: column;
 }
 
-input, button {
+input,
+button {
   margin-bottom: 1em;
 }
 
@@ -18,13 +21,20 @@ footer {
   margin-bottom: 1em;
 }
 
-h1, details, #qrContainer {
+h1,
+details,
+#qrContainer {
   text-align: center;
 }
 
 p {
   text-align: left;
   margin-block-start: 0.5em;
+}
+
+#content,
+footer {
+  display: none;
 }
 
 #qrContainer {
@@ -52,7 +62,8 @@ p {
   justify-content: center;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -60,13 +71,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0;
 }
 
 .input-checkbox-pair {
   display: flex;
 }
 
-#first-name, #last-name, #phone, #email {
+#first-name,
+#last-name,
+#phone,
+#email {
   flex: 1;
 }
 

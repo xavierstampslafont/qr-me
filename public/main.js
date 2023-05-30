@@ -104,3 +104,9 @@ const { hasAnyInfo } = getInfoState();
 if (hasAnyInfo) {
   updateQR();
 }
+
+const content = document.getElementById("content");
+content.style.display = "block";
+
+const footers = document.getElementsByTagName("footer");
+footers[0].style.display = "block";
