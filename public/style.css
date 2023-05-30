@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 
-html, input, button {
-  font-family: 'Prompt', sans-serif;
+html,
+input,
+button {
+  font-family: "Prompt", sans-serif;
   font-size: 18px;
 }
 
@@ -12,7 +14,8 @@ form {
   flex-direction: column;
 }
 
-input, button {
+input,
+button {
   margin-bottom: 1em;
 }
 
@@ -21,7 +24,9 @@ footer {
   text-align: center;
 }
 
-h1, details, #qrContainer {
+h1,
+details,
+#qrContainer {
   text-align: center;
 }
 
@@ -55,7 +60,8 @@ p {
   justify-content: center;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -71,7 +77,10 @@ body {
   display: flex;
 }
 
-#first-name, #last-name, #phone, #email {
+#first-name,
+#last-name,
+#phone,
+#email {
   flex: 1;
 }
 
