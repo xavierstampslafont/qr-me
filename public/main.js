@@ -105,8 +105,12 @@ if (hasAnyInfo) {
   updateQR()
 }
 
-const content = document.getElementById("content");
-content.style.display = "block";
+const content = document.getElementById("content")
+content.style.display = "block"
 
-const footers = document.getElementsByTagName("footer");
-footers[0].style.display = "block";
+const footers = document.getElementsByTagName("footer")
+footers[0].style.display = "block"
+
+const qrMeCodeElement = document.getElementById("qrMeCode")
+const qrMeCode = new QRCode(qrMeCodeElement)
+qrMeCode.makeCode("https://qr-me.netlify.app/")
