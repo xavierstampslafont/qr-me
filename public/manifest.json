@@ -1,0 +1,9 @@
+{
+  "short_name": "QR Me",
+  "name": "QR Me",
+  "icons": [],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "description": "Simple website for generating a QR code containing your vCard details"
+}
